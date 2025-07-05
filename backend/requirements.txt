@@ -1,0 +1,14 @@
+# Core Framework
+Flask==3.0.0
+Flask-SQLAlchemy==3.1.1
+SQLAlchemy==2.0.25
+Flask-Migrate==4.0.5 # For database migrations
+python-dotenv==1.0.1 # For environment variables
+
+# Authentication
+PyJWT==2.8.0 # For JWT
+bcrypt==4.1.2 # For password hashing
+Flask-Bcrypt==1.0.1 # For Flask integration of bcrypt
+
+# Testing
+pytest==8.1.1 
