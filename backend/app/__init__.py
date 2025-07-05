@@ -23,7 +23,7 @@ def create_app(config_class=Config):
         from . import models
 
         # Register blueprints
-        # from .routes.auth_routes import auth_bp
-        # app.register_blueprint(auth_bp, url_prefix='/api/auth')
+        from app.routes.auth_routes import auth_bp
+        app.register_blueprint(auth_bp)
         
         return app 
