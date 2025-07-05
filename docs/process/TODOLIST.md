@@ -28,7 +28,7 @@
 
 ### 1.2 用户与认证模块 (Auth)
 
-#### 任务BE-AUTH-01: 实现用户注册API [ ]
+#### 任务BE-AUTH-01: 实现用户注册API [x] 已完成
 
 - **描述**: 创建接收用户注册请求的API端点，负责验证输入、创建新用户并存入数据库。
 - **参考文件**:
@@ -42,11 +42,11 @@
 - **修改文件**:
   - `backend/app/__init__.py` (注册Blueprint)
 - **验证标准**:
-  - [ ] 接口能成功接收 `POST /api/auth/register` 请求。
-  - [ ] 请求体中的 `username` 和 `password` 字段会经过验证。
-  - [ ] 密码在存入数据库前必须经过哈希处理。
-  - [ ] 成功创建用户后，返回 `201` Created 状态码和新用户的信息。
-  - [ ] 如果用户名已存在，返回 `422 Unprocessable Entity` 错误。
+  - [x] 接口能成功接收 `POST /api/auth/register` 请求。
+  - [x] 请求体中的 `username` 和 `password` 字段会经过验证。
+  - [x] 密码在存入数据库前必须经过哈希处理。
+  - [x] 成功创建用户后，返回 `201` Created 状态码和新用户的信息。
+  - [x] 如果用户名已存在，返回 `422 Unprocessable Entity` 错误。
 
 #### 任务BE-AUTH-02: 实现用户登录API [ ]
 

@@ -4,16 +4,40 @@
 
 **作者**: 汪玮芸
 **创建日期**: 2025-06-20
-**最后更新**: 2025-07-19
+**最后更新**: 2025-07-20
 **文档状态**: "活跃"
 **文档版本**: "**v0.1终极版**"
 
 ---
 
+## 2025-07-20: BE-AUTH-01 - 实现用户注册API
+- **日期**: 2025-07-20
+- **操作人**: AI Assistant
+- **任务ID**: BE-AUTH-01
+- **描述**:
+  - [SETUP]: 为此功能创建了 `feature/backend/auth-registration-api` Git分支。
+  - [TDD-RED]: 创建了 `backend/tests/routes/test_auth_routes.py` 并编写了5个全面的失败测试用例，覆盖了成功、用户名重复、缺少字段和密码哈希验证等场景。
+  - [DEBUG]: 经历了漫长的调试过程来解决 `pytest` 的 `ModuleNotFoundError`。最终通过在项目根目录创建 `pytest.ini` 并正确设置 `pythonpath = backend`，以及使用虚拟环境的Python解释器 (`backend\\.venv\\Scripts\\python.exe -m pytest`) 解决了此问题。
+  - [TDD-GREEN]: 创建了 `backend/app/services/user_service.py`，其中包含 `create_user` 业务逻辑。
+  - [TDD-GREEN]: 通过多种方法（包括`reapply`）最终成功创建了 `backend/app/routes/auth_routes.py` 来定义 `/api/auth/register` API端点。
+  - [TDD-GREEN]: 在 `backend/app/__init__.py` 中注册了新的 `auth_bp` 蓝图。
+  - [TDD-GREEN]: 成功让所有5个测试用例通过。
+  - [REFACTOR]: 将 `user_service.py` 中旧的 `User.query` 写法重构为 SQLAlchemy 2.0 推荐的 `db.session.execute(db.select(...))` 语法，并再次通过了所有测试。
+  - [DOCS]: 更新了 `TODOLIST.md` 中的任务状态。
+- **状态**: 已完成
+- **关联文件**:
+  - `docs/process/TODOLIST.md`
+  - `pytest.ini`
+  - `backend/app/routes/auth_routes.py`
+  - `backend/app/services/user_service.py`
+  - `backend/tests/routes/test_auth_routes.py`
+  - `backend/app/__init__.py`
+- **偏差记录**:
+  - 无
+
 ## 2025-07-05
 
 ### 任务: (BE-INIT) 初始化后端项目
-
 - **执行者**: AI助手
 - **变更**:
   - 创建了 `backend/` 目录结构，遵循 `docs/process/plan-DIR.md`。
